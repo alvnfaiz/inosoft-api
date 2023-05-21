@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+use App\Http\Controllers\API\KendaraanController;
+use App\Http\Controllers\API\MobilController;
+use App\Http\Controllers\API\MotorController;
+
+Route::apiResource('kendaraans', KendaraanController::class);
+Route::apiResource('mobils', MobilController::class);
+Route::apiResource('motors', MotorController::class);
